@@ -1,6 +1,10 @@
 <%- bitcoind = @config['bitcoind'] -%>
 txindex=1
+<%- unless bitcoind['network'] == 'mainnet' -%>
+dnsseed=1
+<%- else -%>
 dnsseed=0
+<%- end -%>
 upnp=0
 printtoconsole=1
 
